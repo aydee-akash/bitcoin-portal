@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Bitcoin Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bitcoin Portal</h1>
+        
+        <div class="grid-container">
+            <div class="grid-item" onclick="showSection('news-section')">
+                <img src="/pngwing.png" alt="News">
+                <p>Latest Bitcoin News</p>
+            </div>
+            <div class="grid-item" onclick="showSection('quiz-section')">
+                <img src="/quiz.png" alt="Quiz">
+                <p>Bitcoin Quiz</p>
+            </div>
+            <div class="grid-item" onclick="showSection('price-section')">
+                <img src="https://cdn.pixabay.com/photo/2017/07/27/21/37/bitcoin-2546854_960_720.png">
+                <p>Real-Time Bitcoin Price</p>
+            </div>
+            <div class="grid-item" onclick="showSection('chart-section')">
+                <img src="https://static.thenounproject.com/png/1324046-200.png" alt="Chart">
+                <p>Bitcoin Price Trends</p>
+            </div>
+        </div>
+
+        <section id="price-section" class="content-section">
+            <h2>Real-Time Bitcoin Price</h2>
+            <div id="bitcoin-price">Loading...</div>
+        </section>
+
+        <section id="news-section" class="content-section">
+            <h2>Latest Bitcoin News</h2>
+            <div id="news"></div>
+        </section>
+                
+        <section id="quiz-section" class="content-section">
+            <h2>Bitcoin Quiz</h2>
+            <div id="quiz-container"></div>
+            <button id="submit-quiz" onclick="submitQuiz()" style="display:none;">Submit Quiz</button>
+            <div id="quiz-result" style="display:none;"></div>
+        </section>
+
+        <section id="chart-section" class="content-section" style="display: none;">
+            <h2>Bitcoin Price Trends</h2>
+            <div id="tradingview-widget-container" style="height: 400px; width: 100%;"></div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
+
